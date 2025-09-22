@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mercedes-Benz Specifications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      color: #ffffff;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1em;
+      font-weight: normal;
+      color: #cccccc;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .category-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .category-bar button {
+      background: linear-gradient(to bottom, #444, #222);
+      border: none;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 1em;
+      cursor: pointer;
+      padding: 12px 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.4);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .category-bar button:hover {
+      background: linear-gradient(to bottom, #555, #333);
+      transform: scale(1.05);
+    }
+    .models {
+      display: none;
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .models button {
+      background: #2a2a2a;
+      border: none;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 1em;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin: 5px 0;
+      width: 100%;
+      text-align: left;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .models button:hover {
+      background: #3a3a3a;
+      transform: scale(1.01);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mercedes-Benz Specifications</h1>
+    <h2>Product Expert | Primus Autohaus. As of 23 September 2025</h2>
+  </header>
+
+  <div class="container">
+    <div class="category-bar">
+      <button onclick="toggleModels('sedan')">Sedan</button>
+      <button onclick="toggleModels('coupe')">Coupe</button>
+      <button onclick="toggleModels('suv')">SUV</button>
+      <button onclick="toggleModels('amg')">AMG</button>
+      <button onclick="toggleModels('ev')">EV</button>
+      <button onclick="toggleModels('van')">VAN</button>
+    </div>
+
+    <div id="sedan" class="models">
+      <button>A-Class</button>
+      <button>C-Class</button>
+      <button>E-Class</button>
+      <button>S-Class</button>
+      <button>Maybach S-Class</button>
+    </div>
+
+    <div id="coupe" class="models">
+      <button>CLE</button>
+    </div>
+
+    <div id="suv" class="models">
+      <button>GLA</button>
+      <button>GLC</button>
+      <button>GLC Coupe</button>
+      <button>GLE</button>
+      <button>GLS</button>
+      <button>G-Class</button>
+    </div>
+
+    <div id="amg" class="models">
+      <button>AMG CLE 53</button>
+      <button>AMG EQE 53</button>
+      <button>AMG GLE 53</button>
+      <button>AMG SL 43</button>
+      <button>AMG SL 55</button>
+      <button>AMG GT 63</button>
+    </div>
+
+    <div id="ev" class="models">
+      <button>EQE Sedan</button>
+      <button>EQE SUV</button>
+      <button>EQS Sedan</button>
+      <button>EQS SUV</button>
+      <button>Maybach EQS SUV</button>
+    </div>
+
+    <div id="van" class="models">
+      <button>Vito</button>
+      <button>V-Class</button>
+      <button>Sprinter</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Primus Autohaus. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleModels(id) {
+      const allModels = document.querySelectorAll('.models');
+      allModels.forEach(model => {
+        if (model.id !== id) {
+          model.style.display = 'none';
+        }
+      });
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
